@@ -11,8 +11,15 @@ dependencies = [
 [dependency-groups]
 dev = [
     "doc8>=1.1.2",
+    "docutils-ast-writer>=2023.1.0",
     "esbonio>=0.16.5",
     "mypy>=1.15.0",
     "ruff>=0.11.8",
     "sphinx-autobuild>=2024.10.3",
 ]
+
+[tool.uv.sources]
+docutils-ast-writer = { url = "https://github.com/attakei-sandbox/docutils-ast-writer/archive/refs/heads/main.zip" }
+
+[tool.doc8]
+max-line-length = 119

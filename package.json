@@ -1,13 +1,22 @@
 {
-  "name": "sphinx-extensions-catalog",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "Apache-2.0",
-  "packageManager": "pnpm@10.6.5"
+    "name": "sphinx-extensions-catalog",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "textlint README.md content/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "Apache-2.0",
+    "packageManager": "pnpm@10.6.5",
+    "dependencies": {
+        "textlint": "^14.6.0",
+        "textlint-filter-rule-comments": "^1.2.2",
+        "textlint-plugin-rst": "github:attakei-sandbox/textlint-plugin-rst#for-literal",
+        "textlint-rule-preset-ja-technical-writing": "^12.0.2"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4"
+    }
 }

@@ -3,18 +3,21 @@
 
 pre-commit:
   parallel: true
+  jobs:
+    - name: 'Ruff'
+      glob: '*.py'
+      group:
+        parallel: false
+        jobs:
+          - run: 'uv run ruff format {staged_files}'
+          - run: 'uv run ruff check --fix {staged_files}'
   commands:
-    ruff-fomat:
-      glob: '*.py'
-      run: 'uv run ruff format {staged_files}'
-      stage_fixed: true
-    ruff-fix:
-      glob: '*.py'
-      run: 'uv run ruff format {staged_files}'
-      stage_fixed: true
     mypy:
       glob: '*.py'
       run: 'uv run mypy {staged_files}'
     doc8:
       glob: '*.rst'
       run: 'uv run doc8 --max-line-length=119 {staged_files}'
+    textlint:
+      glob: '*.{rst,md}'
+      run: 'uv run pnpm textlint {staged_files}'

@@ -1,0 +1,10 @@
+{
+    "plugins": ["rst"],
+    "rules": {
+        "preset-ja-technical-writing": {
+            "no-exclamation-question-mark": false,
+            "sentence-length": {"max": 120}
+        }
+    },
+    "filters": {"comments": true}
+}

@@ -1,4 +1,14 @@
+==================
 Sphinx拡張カタログ
 ==================
 
-Sphinxユーザーによる、Sphinx拡張コレクションノート
+.. textlint-disable
+
+〜Sphinxユーザーによる、Sphinx拡張コレクションノート〜
+
+.. textlint-enable
+
+.. toctree::
+    :maxdepth: 2
+
+    introduction
