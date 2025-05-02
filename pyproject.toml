@@ -1,0 +1,18 @@
+[project]
+name = "sphinx-extensions-catalog"
+version = "0.0.0"
+description = "Book publishing environment."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "sphinx>=8.2.3",
+]
+
+[dependency-groups]
+dev = [
+    "doc8>=1.1.2",
+    "esbonio>=0.16.5",
+    "mypy>=1.15.0",
+    "ruff>=0.11.8",
+    "sphinx-autobuild>=2024.10.3",
+]

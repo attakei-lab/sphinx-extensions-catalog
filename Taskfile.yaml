@@ -1,0 +1,25 @@
+version: '3'
+
+env:
+  SPHINXINTL_TRANSLATOR: "Kazuya Takei <myself@attakei.net>"
+
+includes:
+  # Set for Sphinx workspace.
+  default:
+    taskfile: './Taskfile.dist.yaml'
+    flatten: true  # This project is only Sphinx. It doesn't need to append prefix.
+    vars:
+      RUN_PYTHON: 'uv run'
+      SPHINX_DEFAULT_BUILD: 'singlehtml'
+      SPHINX_SOURCE_DIR: 'content'
+      SPHINX_OUTPUT_DIR: 'build'
+
+tasks:
+  setup:
+    cmds:
+      - 'uv sync --frozen'
+      - 'lefthook install'
+  verify:
+    cmds:
+      - 'lefthook run pre-commit --all-files'
+      - task: 'build-linkcheck'
