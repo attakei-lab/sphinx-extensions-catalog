@@ -42,7 +42,7 @@ Sphinx拡張としての名称は ``oembedpy.adapters.sphinx`` なので、 ``ex
         "oembedpy.adapters.sphinx",
     ]
 
-使い方
+書き方
 ------
 
 ``oembed`` というディレクティブに「コンテンツとして埋め込みたいURL」を 引数として引き渡すだけで良いです。
