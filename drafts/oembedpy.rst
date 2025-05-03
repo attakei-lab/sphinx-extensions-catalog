@@ -2,10 +2,13 @@
 oEmbedPy
 ========
 
-:PyPI: https://pypi.org/project/oEmbedPy
-:Git: https://github.com/attakei/oEmbedPy
-:Doc: https://oembedpy.readthedocs.io/
+:PyPI URL: https://pypi.org/project/oEmbedPy
+:Repository: https://github.com/attakei/oEmbedPy
+:Document: https://oembedpy.readthedocs.io/
 :Author: Kazuya Takei
+:Category:
+  - ディレクティブ追加
+  - コンテンツ埋め込み
 
 より簡単に外部コンテンツを埋め込むためのライブラリ。
 

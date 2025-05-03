@@ -2,10 +2,15 @@
 sphinx-nekochan
 ===============
 
-:PyPI: https://pypi.org/project/sphinx-nekochan
-:Git: https://github.com/takanory/sphinx-nekochan
-:Doc: https://sphinx-nekochan.readthedocs.io/
+:PyPI URL: https://pypi.org/project/sphinx-nekochan
+:Repository: https://github.com/takanory/sphinx-nekochan
+:Document: https://sphinx-nekochan.readthedocs.io/
 :Author: Takanori Suzuki
+:Category:
+  - ディレクティブ追加
+  - ロール追加
+  - コンテンツ埋め込み
+  - 絵文字
 
 ドキュメント上に可愛いネコチャンを遊ばせるための拡張。
 
