@@ -6,7 +6,7 @@ env:
 includes:
   # Set for Sphinx workspace.
   default:
-    taskfile: './Taskfile.dist.yaml'
+    taskfile: 'https://github.com/attakei/workspace-configs.git//sphinx-doc/Taskfile.yaml?ref=main'
     flatten: true  # This project is only Sphinx. It doesn't need to append prefix.
     vars:
       RUN_PYTHON: 'uv run'

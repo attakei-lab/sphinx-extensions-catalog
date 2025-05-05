@@ -1,6 +1,15 @@
 # Important!
 #   This hooks require uv to
 
+templates: 
+  run_python: 'uv run'
+
+remotes:
+  - git_url: https://github.com/attakei/workspace-configs
+    ref: main
+    configs:
+      - sphinx-doc/lefthook.yaml
+
 pre-commit:
   parallel: true
   jobs:
@@ -9,15 +18,12 @@ pre-commit:
       group:
         parallel: false
         jobs:
-          - run: 'uv run ruff format {staged_files}'
-          - run: 'uv run ruff check --fix {staged_files}'
+          - run: '{run_python} ruff format {staged_files}'
+          - run: '{run_python} ruff check --fix {staged_files}'
   commands:
     mypy:
       glob: '*.py'
-      run: 'uv run mypy {staged_files}'
-    doc8:
-      glob: '*.rst'
-      run: 'uv run doc8 --max-line-length=119 {staged_files}'
+      run: '{run_python} mypy {staged_files}'
     textlint:
       glob: '*.{rst,md}'
-      run: 'uv run pnpm textlint {staged_files}'
+      run: '{run_python} pnpm textlint {staged_files}'
