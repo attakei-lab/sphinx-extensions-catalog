@@ -13,3 +13,6 @@ Sphinx拡張カタログ
 
     about-sample
     introduction
+    add-directives/index
+    extend-inout/index
+    others/index
