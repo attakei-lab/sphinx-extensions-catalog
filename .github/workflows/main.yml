@@ -1,0 +1,55 @@
+name: 'Default CI jobs'
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  pull_request:
+  workflow_dispatch:
+
+env:
+  TASK_X_REMOTE_TASKFILES: 1
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'jdx/mise-action@v2'
+      - name: 'Install dependencies'
+        run: pnpm install
+      - name: 'Setup uv and venv'
+        run: |
+          uv sync
+      - name: 'Run linter'
+        run: |
+          lefthook run pre-commit --all-files
+          uv run pnpm lint
+  build-epub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'jdx/mise-action@v2'
+      - name: 'Setup uv and venv'
+        run: |
+          uv sync
+      - name: 'Build epub'
+        run: 'task --yes build-epub'
+      - uses: 'actions/upload-artifact@v4'
+        with:
+          name: 'EPUB'
+          path: 'build/epub/SphinxextensionsCatalog.epub'
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: 'actions/checkout@v4'
+      - uses: 'jdx/mise-action@v2'
+      - uses: 'docker/setup-buildx-action@v3'
+      - name: 'Build pdf'
+        run: 'uv run tools/makepdf'
+      - uses: 'actions/upload-artifact@v4'
+        with:
+          name: 'PDF'
+          path: 'build/latex/sphinxextensionscatalog.pdf'
